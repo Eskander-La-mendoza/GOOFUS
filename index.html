@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>#1</legend>
+        <input type="email" name="" id="elem1">
+        <button id="button1">Press for attribute alert</button>
+    </fieldset>
+    <fieldset>
+        <legend>#2</legend>
+        <input type="date" name="" id="elem2">
+        <button id="button2">Press for attribute alert. Then =></button>
+        <button id="button3">Press for attribute change and alert</button>
+    </fieldset>
+    <fieldset>
+        <legend>#3</legend>
+        <a href="https://rah.kz/ru" id="link1">Link 1</a>
+        <p id="par1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque in tenetur sint doloremque alias quisquam sunt labore? Consectetur debitis similique quam beatae, aliquam alias modi odio assumenda cum, inventore quos!</p>
+        <button id="button4">Press to add the link attribute</button>
+    </fieldset>
+    <fieldset>
+        <legend>#4</legend>
+        <a href="https://rah.kz/ru" id="link2">Link 2</a>
+        <br>
+        <button id="button5">Press to add the link attribute</button>
+    </fieldset>
+    <fieldset>
+        <legend>#5</legend>
+        <img src="01 — копия.jpg" alt="Papanya" id="papanya1">
+        <p id="par2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque in tenetur sint doloremque alias quisquam sunt labore? Consectetur debitis similique quam beatae, aliquam alias modi odio assumenda cum, inventore quos!</p>
+        <button id="button6">Press to add the img src attribute</button>
+    </fieldset>
+    <fieldset>
+        <legend>#6</legend>
+        <img src="01 — копия.jpg" alt="Papanya" id="papanya2">
+        <button id="button7">Press to change width to 300</button>
+    </fieldset>
+    <fieldset>
+        <legend>#7</legend>
+        <img src="01 — копия.jpg" alt="Papanya" id="papanya3">
+        <button id="button8">Press to change width to 2x</button>
+    </fieldset>
+    <fieldset>
+        <legend>#8</legend>
+        <img src="01 — копия.jpg" alt="Papanya" id="papanyailisus">
+        <button id="button9">Press to change to Papanya</button>
+        <button id="button10">Press to change to Sus</button>
+    </fieldset>
+    <script>
+        let but1 = document.querySelector('#button1');
+        let el1 = document.querySelector('#elem1');
+        but1.addEventListener('click', function(){
+            alert(el1.type)
+        });
+        
+        let but2 = document.querySelector('#button2');
+        let but3 = document.querySelector('#button3');
+        let el2 = document.querySelector('#elem2');
+        but2.addEventListener('click', function(){
+            alert(el2.type)
+        });
+        but3.addEventListener('click', function(){
+            el2.type = 'color'
+            alert(el2.type)
+        });
+
+        let but4 = document.querySelector('#button4');
+        let li1 = document.querySelector('#link1');
+        let p1 = document.querySelector('#par1');
+        but4.addEventListener('click', function(){
+            p1.textContent += ' (' + li1.href + ')'
+        });
+
+        let but5 = document.querySelector('#button5');
+        let li2 = document.querySelector('#link2');
+        but5.addEventListener('click', function(){
+            li2.textContent += ' (' + li2.href + ')'
+        });
+
+        let but6 = document.querySelector('#button6');
+        let img1 = document.querySelector('#papanya1');
+        let p2 = document.querySelector('#par2');
+        but6.addEventListener('click', function(){
+            p2.textContent += ' (' + img1.src + ')'
+        });
+
+        let but7 = document.querySelector('#button7');
+        let img2 = document.querySelector('#papanya2');
+        but7.addEventListener('click', function(){
+            img2.width = '300'
+        });
+
+        let but8 = document.querySelector('#button8');
+        let img3 = document.querySelector('#papanya3');
+        but8.addEventListener('click', function(){
+            img3.width *= 2
+        });
+
+        let but9 = document.querySelector('#button9');
+        let but10 = document.querySelector('#button10');
+        let img4 = document.querySelector('#papanyailisus');
+        but9.addEventListener('click', function(){
+            img4.src = '01 — копия.jpg'
+        });
+        but10.addEventListener('click', function(){
+            img4.src = 'DSC_5918.JPG'
+        });
+    </script>
+</body>
+</html>
